@@ -1,0 +1,155 @@
+\documentclass[11.5pt,a4paper,oneside]{article}
+\usepackage{programming}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\renewcommand{\contestname}{
+دانشگاه تهران، دانشکده مهندسی برق و کامپیوتر \\
+تحلیل و طراحی الگوریتم‌ها \\
+}
+
+\renewcommand{\contestauthor}{
+تمرین کامپیوتری اول \\ موعد تحویل: دوشنبه ۶ اسفند ۹۷، ساعت ۲۳:۵۵ \\ طراح:‌ نام طراح،
+\texttt{johndoe@example.com}
+}
+
+\begin{document}
+
+{\noindent \Large \bf \contestname}
+{\contestauthor}
+
+\begin{flushleft}
+\nothing\\[-3.2cm]
+\includegraphics[height=2.5cm]{../../../static/pics/ut-eng.png}
+\end{flushleft}
+
+\def\problemCode{encoding}
+\def\problemEnglishTitle{}
+\def\problemFarsiTitle{رمزنگاری}
+\def\timeLimit{$2$ \second}
+\def\memLimit{$256$ \megabytes}
+\begin{problem}
+می‌خواهیم رشته‌ای از حروف را با استفاده از تابع $\phi$ رمز کنیم.
+برای رشته $W$، تابع
+$\phi(W)$
+به صورت زیر تعریف می‌شود:
+\begin{shortitems}
+\item
+اگر
+$|W|=1$
+باشد، آنگاه
+$\phi(W)=W$
+
+\item
+در غیر این صورت
+$W=w_1 w_2 ... w_n$
+و
+$k=\floor*{n\over2}$
+، آنگاه
+$\phi(W) = \phi(w_n w_{n-1} ... w_{k+1}) + \phi(w_k w_{k-1} ... w_1)$
+\end{shortitems}
+
+
+برای مثال:
+\begin{enumerate}
+\item
+$\phi(Ok)=\phi(k)+\phi(O)=k+O=kO$
+\item
+$\phi(abcd)=\phi(dc)+\phi(ba)=\phi(c)+\phi(d)+\phi(a)+\phi(b)=cdab$
+\end{enumerate}
+
+شما باید اندیس کاراکتر $w_q$ را در رشته
+$\phi(W)$
+پیدا کنید.
+
+\inputDescription
+در تنها خط ورودی عددهای $n$ و $q$ به ترتیب آمده‌اند. ($n$ نشان‌دهنده طول رشته $W$ است)
+
+\outputDescription
+عدد خواسته‌شده را در خروجی نمایش دهید.
+
+\sampleIO
+
+\begin{example}
+\exmp{%
+9 4
+}{%
+8
+}%
+\end{example}
+
+\sampleIODescription
+اگر فرض کنیم
+$W=abcdefgh$
+، داریم
+$w_q=w_4=d$
+و
+$\phi(W)=fehgbadc$
+. در رشته 
+$\phi(W)$
+ حرف 
+$w_q$
+، ۸امین حرف است و بنابراین جواب مساله برابر ۸ خواهد بود.
+
+\end{problem}
+
+
+\def\problemCode{school}
+\def\problemEnglishTitle{}
+\def\problemFarsiTitle{مدرسه}
+\def\timeLimit{$2$ \second}
+\def\memLimit{$256$ \megabytes}
+\begin{problem}
+در حیاط مدرسه «بوی‌ ماه مهر»، 
+$n^2$
+دانش‌آموز آن در یک مربع 
+$n \times n$
+ایستاده‌اند. قد دانش‌آموزی که در ردیف $i$ام و ستون $j$ام ایستاده‌است برابر
+$A_{i, j}$
+است. حال بعد از به صدا درآمدن زنگ، هر دانش‌آموز به چهار دانش‌آموز بالا، پایین، چپ و راست خود (در صورت وجود) نگاه می‌کند و به ناظم مدرسه می‌گوید که چند تا از آن‌ها از او قدشان بلندتر است. فرض می‌کنیم که دانش‌آموز در ردیف $i$ و ستون $j$ام، عدد
+$B_{i, j}$
+را گزارش کرده‌است.
+
+به شما جدول $B$ داده‌شده‌ است. شما باید جدول $A$ که $B$ از روی آن بدست آمده است را پیدا کنید.
+
+\inputDescription
+در اولین عدد $n$ آمده‌است.
+در هر کدام از $n$ خط بعدی، $n$ عدد می‌آیند که ماتریس $B$ را توصیف می‌کنند.
+\outputDescription
+اگر ماتریس $A$ متناظر با $B$ وجود داشت در $n$ خط خروجی درایه‌های آن را چاپ کنید و در غیر این صورت در تنها خط خروجی عبارت \LR{NO SOLUTION} را بنویسید.
+
+\constraints
+\begin{shortitems}
+\item $1 \le n \le 3$
+\item $0 \le A_{i, j} \le 9$
+\end{shortitems}
+
+\sampleIO
+
+\begin{example}
+\exmp{%
+3
+1 2 1
+1 2 1
+1 1 0
+}{%
+1 2 3
+1 4 5
+1 6 7
+}%
+\end{example}
+
+\sampleIODescription
+برای مثال
+$B_{2, 2}=2$
+است چرا که اگر مقدار
+$A_{2, 2}$
+را با همسایه‌های آن (یعنی 
+$A_{1, 2}$، $A_{2, 1}$، $A_{2, 3}$ و $A_{3, 2}$)
+مقایسه کنیم تنها ۲ عدد بزرگ‌تر از
+$A_{2, 2}$
+در بین‌شان هست.
+
+\end{problem}
+
+\end{document}
