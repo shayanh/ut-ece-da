@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{fancyhdr}
+\usepackage{fullpage}
+%\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+%\usepackage[margin=0.5in]{geometry}
+\usepackage{xepersian}
+%\settextfont[BoldFont=Bold.ttf]{Regular.ttf}
+%\usepackage{enumerate}
+\date{}
+\usepackage{xepersian}
+\settextfont{XBNiloofar.ttf}
+%\usepackage{enumerate}
+\date{}
+
+%\pagestyle{fancy}
+%\fancyhead[RE,RO]{راست}
+%\fancyhead[LE,LO]{چپ}
+%\fancyhead[CE,CO]{وسط}
+
+\def\vstrut#1{\rule{0pt}{#1}}
+\def\nothing{\vstrut{0pt}}
+
+\begin{document}
+
+
+\begin{center}
+{به نام خدا}
+\end{center}
+
+\hspace{8mm}
+
+{\noindent \Large \textbf {
+دانشگاه تهران، دانشکده مهندسی برق و کامپیوتر \\
+تحلیل و طراحی الگوریتم‌ها \\
+}}
+
+{\noindent {
+تمرین کتبی دوم \\
+موعد تحویل: شنبه ۴ اسفند ۹۷، ساعت ۹:۰۰ \\
+طراح: آبتین باطنی
+\texttt{abtinbateni+da-hw@gmail.com}
+}}
+
+\begin{flushleft}
+\nothing \\[-3.2cm]
+\includegraphics[height=2.5cm]{./ut-eng.png}
+\end{flushleft}
+
+%\maketitle
+\rule{\textwidth}{1pt}
+
+
+\begin{enumerate}
+\item
+یک الگوریتم از $O(n^2)$ برای پیدا کردن بزرگ‌ترین زیردنباله‌ی غیر نزولی از دنباله اعداد
+$X = {x_1, x_2, ..., x_n}$
+ارائه دهید.
+(ارائه الگوریتم از $O(nlogn)$ نمره اضافی دارد.)
+\item
+فرض کنید u و v دو رشته باشند. ما می‌خواهیم رشته u را به رشته‌ی v با عمل‌های زیر تبدیل کنیم:
+\begin{itemize}
+    \item حذف یک کارکتر
+    \item اضافه کردن یک کاراکتر در یک مکان
+    \item
+    عوض کردن یک کارکتر
+\end{itemize}
+اگر طول دو رشته به ترتیب n و m باشد یک الگورتیم از O(nm) ارائه دهید که کمترین تعداد عملیات مورد نیاز را بشمارد.
+\item
+در رودخانه n نقطه وجود دارد که در آنها می‌توان قایق اجاره کرد. فرض کنید این نقاط در راستای رود‌خانه به ترتیب از ۱ تا n شماره‌گذاری شده‌اند. همچنین فرض کنید هزینه اجاره کردن قایق از نقطه i و رفتن تا خانه j برابر $a_{ij}$
+باشد. روشی ارائه دهید که با کمترین هزینه از نقطه ۱ با اجاره کردن تعدادی قایق به نقطه‌ی n برسیم.
+\begin{itemize}
+    \item الگوریتمی از $O(n^2)$ ارائه دهید.
+    \item با استفاده از روش Trick Hull Convex در چه صورتی می‌توان الگوریتم را بهینه‌تر کرد؟با اضافه کردن این شرط و با استفاده از این ایده الگوریتمی از O(n) برای حل مسئله ارائه دهید. (این بخش به طور کامل امتیازی است و این روش را در اینترنت جستجو کنید.)
+\end{itemize}
+\item
+فرض کنید n شئ در اختیار داریم که می‌توانیم به ترتیبی آنها را پشت سر هم قرار داده و بین آنها علائم < و = قرار دهیم. تعداد راه‌های انجام این کار را بدست آورید. مثلا برای ،n=۲ ۳ روش و برای ،n=۳ ۱۳ روش وجود دارد. (فرض کنید فاکتوریل هر عددی را در O(1) می‌توان حساب کرد.)
+\item
+الگوریتمی از O(nk) ارائه دهید 
+که تعداد راه‌های ساخت عدد n را با استفاده از سکه‌های $c_1, ..., c_k$ تومانی را با استفاده از O(n) خانه‌ی حافظه بشمارد.
+\item
+در یک کارخانه چوب‌بری عجیب برای اینکه یک تکه چوب را در یک مرحله به k تکه برش بزنند $c_k$ تومن پول گرفته می‌شود. الگوریتمی ارائه دهید که یک تکه چوب را با کمترین خرج به n تکه تقسیم کند.
+\end{itemize}
+
+\end{enumerate}
+
+\end{document}
