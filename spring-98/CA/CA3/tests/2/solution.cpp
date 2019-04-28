@@ -24,7 +24,7 @@ typedef long long ll;
 typedef pair<ll, ll> pll;
 typedef pair<int, int> pii;
 
-const int MAXN = 100 * 1000 + 10, MAXM = 100 * 1000 + 10, MAXL = 10;
+const int MAXN = 100 * 1000 + 10, MAXM = 200 * 1000 + 10, MAXL = 25;
 
 int par2[MAXN];
 pair <int, pii> e[MAXM];

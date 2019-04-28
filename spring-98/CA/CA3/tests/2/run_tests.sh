@@ -7,9 +7,9 @@
 # for example: bash run_scripts.sh ./q1/somewhere
 for ((i=1; i<=1000; i++)); do
     ind=${i}
-    if [ ${i} -lt 10 ]; then
-        ind="0${i}"
-    fi
+    #if [ ${i} -lt 10 ]; then
+        #ind="0${i}"
+    #fi
     dirname=`dirname $0`
     if [ "$#" -eq 1 ]; then
         dirname=$1
